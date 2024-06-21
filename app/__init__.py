@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from app import config
+from app import views
 from module_dotenv import secret_key
 
 
@@ -11,5 +12,3 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = secret_key
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
-
-from app import views
