@@ -64,7 +64,6 @@ class Ad(db.Model, BaseModelMixin):
     title = db.Column(db.String(120), index=True, nullable=False)
     description = db.Column(db.Text, index=True, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-
     creator_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     creator = db.relationship('User', backref=db.backref('ads', lazy=True))
 
